@@ -146,7 +146,7 @@ func createPixelBuffer(filePath: String, size: CGSize) -> CVPixelBuffer? {
             baseAddress?.copyMemory(from: pointer, byteCount: data.count)
             pointer.deallocate()
         }
-        CVPixelBufferUnlockBaseAddress(pixelBuffer, [])
+        CVPixelBufferUnlockBaseAddress(pixelBuffer, .readOnly)
     }
     
     return pixelBuffer
